@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include "myops.h"
 
 double calculate(char* op, double a, double b){
 	printf("Calculating.....\n");
@@ -14,6 +16,12 @@ double calculate(char* op, double a, double b){
 	}
 	else if(strcmp(op, "/") == 0){
 		return mydiv(a, b);
+	}
+	else if(strcmp(op, "%")==0){
+		return mymod(a,b);
+	}
+	else if(strcmp(op, "^")==0){
+		return mypow(a,b);
 	}
 	else{
 		printf("Unknown operator: %s\n", op);
